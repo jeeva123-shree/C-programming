@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    char s[1000];
+    int a,b,sum=0,c,area=0;
+    for(int i=0;i<n;i++){
+        scanf("%s ",s);
+        if(s[0]=='s'){
+            scanf("%d",&a);
+            area=a*a;
+        }
+        else if(s[0]=='r'){
+            scanf("%d %d",&b,&c);
+            area=b*c;
+        }
+        sum+=area;
+    }
+    printf("%d",sum);
+    return 0;
+}
+
+
+output:
+square 5
+rectangle 4 2
+rectangle 3 10
+square 11
+184

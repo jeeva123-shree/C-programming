@@ -1,0 +1,49 @@
+input:3
+output:
+1 * 2 * 3
+- 5 * 4
+- - 6
+
+int main()
+{
+int n;
+scanf("%d",&n);
+int t=n+(n-1),k=1,num=0,b=n,temp=0,a;
+for(int i=1;i<=n;i++){
+    a=i;
+    for(int k=1;k<i;k++){
+        printf("- ");
+    }
+    if(i%2!=0){
+        num+=1;
+    }
+    else{
+        num+=b;
+    }
+    temp=num;
+    for(int j=i;j<=t;j++){
+        if(a==j && i%2!=0){
+        printf("%d ",temp);
+        a+=2;
+        temp++;
+        num=temp;
+        }
+        else if(a==j && i%2==0){
+            printf("%d ",temp);
+            a+=2;
+            temp--;
+        }
+        else{
+            printf("* ");
+        }
+    }
+    if(i%2!=0){
+        num=temp;
+        num--;
+    }
+    b--;
+    t--;
+    printf("\n");
+    
+}
+}

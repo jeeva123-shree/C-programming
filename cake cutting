@@ -1,0 +1,25 @@
+input:1
+output:2
+input:3
+output:6
+input:4
+output:9
+
+#include <stdio.h>
+int main() {
+    // Write C code here
+    //printf("Hello world");
+    int n;
+    scanf("%d",&n);
+    int a[n];
+    a[1]=2;
+    int k=2;
+    for(int i=2;i<=n;i++){
+        if((i+1)%2!=0){
+            k++;
+        }
+        a[i]=a[i-1]+k-1;
+    }
+    printf("%d",a[n]);
+    return 0;
+}

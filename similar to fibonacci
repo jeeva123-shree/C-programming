@@ -1,0 +1,39 @@
+input:4 
+output:
+0 1 
+0 1 1 
+0 1 1 2 
+0 1 1 2 3
+
+
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    //printf("Hello world");
+    int n;
+    scanf("%d",&n);
+    int a=0,b=1,t;
+    int k=1;
+    for(int i=0;i<n;i++){
+        //printf("%d %d ",a,b);
+        a=0,b=1;
+        for(int j=0;j<=k;j++){
+            if(j<=1){
+                //t=a+b;
+                printf("%d %d ",a,b);
+                j++;
+                
+            }
+            else{
+                t=a+b;
+                printf("%d ",t);
+                a=b;
+                b=t;
+            }
+        }
+        k++;
+        printf("\n");
+    }
+    return 0;
+}

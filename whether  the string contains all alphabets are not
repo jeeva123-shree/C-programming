@@ -1,0 +1,34 @@
+input: 
+abc defghi jklm nopqrst uvwxyz
+output:
+NO
+
+
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main() {
+    // Write C code here
+    //printf("Hello world");
+    char s[1000];
+    scanf("%[^\n]",s);
+    int a[26]={0},index;
+    int l=strlen(s);
+    for(int i=0;i<l;i++){
+        if(isalpha(s[i])){
+            if(isupper(s[i])){
+                s[i]=tolower(s[i]);
+            }
+            index=(int)s[i]-97;
+            a[index]=1;
+        }
+    }
+    for(int i=0;i<26;i++){
+        if(a[i]==0){
+            printf("NO");
+            return 0;
+        }
+    }
+    printf("YES");
+    return 0;
+}

@@ -1,0 +1,35 @@
+input:  5
+output:
+1
+11
+21
+1211
+111221
+
+#include <stdio.h>
+
+int main() {
+  int n;
+  scanf("%d",&n);
+  char s[100]="1",a[1000];
+  int c=1,k=0;
+  while(n--) {
+      printf("%s\n",s);
+  for(int i=0;s[i]!='\0';i++){
+      if(s[i]==s[i+1]){
+          c++;
+      }
+      else{
+          a[k]=c+48;   //interger to char  ascii value of 1=48
+          k++;
+          a[k++]=s[i];
+          c=1;
+      }
+  }
+  //printf("%s\n",a);
+  a[k]='\0';
+  strcpy(s,a);
+  k=0;
+}
+    return 0;
+}
